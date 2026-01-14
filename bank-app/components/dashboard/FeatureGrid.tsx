@@ -51,7 +51,7 @@ export default function FeatureGrid() {
           title="My Cards"
           description="Freeze cards, change PINs, or request new ones."
           icon={<CreditCard className="h-6 w-6 text-purple-600" />}
-          onClick={() => alert('Managing Cards')}
+          onClick={() => router.push('/cards')}
         />
       </div>
     </section>
