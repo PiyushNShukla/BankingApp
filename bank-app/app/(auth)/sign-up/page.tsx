@@ -6,10 +6,11 @@
 import { useState, ChangeEvent } from 'react';
 import { Eye, EyeOff, Lock, Mail, User, Phone, AlertCircle, CheckCircle, MapPin,Calendar } from 'lucide-react';
 import { SignUpFormData,FormErrors,PasswordStrength } from '@/types/auth';
-
+import { useAuth } from '@/context/AuthContext';
 
 
 export default function SignUp() {
+  const { login } = useAuth();
   const [formData, setFormData] = useState<SignUpFormData>({
     fullName: '',
     email: '',
@@ -33,15 +34,23 @@ export default function SignUp() {
     } else {
       const today = new Date();
       const dob = new Date(formData.dateOfBirth);
-      const age = today.getFullYear() - dob.getFullYear();
-      const monthDiff = today.getMonth() - dob.getMonth();
       
-      if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+     
+      
+        // Calculate age correctly
+        let age = today.getFullYear() - dob.getFullYear();
+        const monthDiff = today.getMonth() - dob.getMonth();
         
-      } else if (age < 18) {
-        newErrors.dateOfBirth = 'You must be at least 18 years old';
-      }
-            
+        // Adjust age if birthday hasn't occurred this year
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+          age--;
+        }
+        
+        // Check if user is at least 18
+        if (age < 18) {
+          newErrors.dateOfBirth = 'You must be at least 18 years old';
+        }
+      
     }
 
     if (!formData.fullName) {
@@ -92,8 +101,9 @@ export default function SignUp() {
     // Simulate loading and redirect
     setTimeout(() => {
       setIsLoading(false);
-      // Redirect to root page
-      window.location.href = '/';
+      // For demo, extract name from email
+      const userName = formData.email.split('@')[0];
+      login(userName);
     }, 1000);
   };
 

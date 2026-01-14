@@ -1,17 +1,25 @@
+// File: components/wrapper/NavbarWrapper.tsx
+
 "use client";
 
+import { usePathname } from 'next/navigation';
 import Navbar from "../ui/Navbar";
 import { useAuth } from "@/context/AuthContext";
 
 export default function NavbarWrapper() {
-  const { userName, logout } = useAuth();
+  const { userName, logout, isAuthenticated } = useAuth();
+  const pathname = usePathname();
 
-  // Hide navbar when not logged in
-  if (!userName) return null;
+  // Hide navbar on auth pages (signin/signup)
+  const isAuthPage = pathname?.startsWith('/auth');
+  
+  if (isAuthPage || !isAuthenticated) {
+    return null;
+  }
 
   return (
     <Navbar
-      userName={userName}
+      userName={userName || 'Guest'}
       onLogout={logout}
     />
   );

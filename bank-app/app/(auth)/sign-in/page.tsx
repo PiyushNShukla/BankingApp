@@ -1,14 +1,24 @@
+// File: app/auth/signin/page.tsx
+
 'use client';
-import { useAuth } from "@/context/AuthContext";
-import { useRouter } from "next/navigation";
 
 import { useState, ChangeEvent, FormEvent } from 'react';
 import { Eye, EyeOff, Lock, Mail, AlertCircle } from 'lucide-react';
-import { SignInFormData,FormErrors } from '@/types/auth';
+import { useAuth } from '@/context/AuthContext';
+
+interface SignInFormData {
+  email: string;
+  password: string;
+}
+
+interface FormErrors {
+  email?: string;
+  password?: string;
+  submit?: string;
+}
 
 export default function SignIn() {
-    const { login } = useAuth();
-    const router = useRouter();
+  const { login } = useAuth();
   const [formData, setFormData] = useState<SignInFormData>({
     email: '',
     password: ''
@@ -28,32 +38,29 @@ export default function SignIn() {
     
     if (!formData.password) {
       newErrors.password = 'Password is required';
-    } 
+    } else if (formData.password.length < 6) {
+      newErrors.password = 'Password must be at least 6 characters';
+    }
     
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = (e: FormEvent<HTMLButtonElement>): void => {
-  
-
-  e.preventDefault();
-
-  if (!validateForm()) return;
-
-  setIsLoading(true);
-
-  setTimeout(() => {
-    setIsLoading(false);
-
-    // Temporary username logic
-    const userName = formData.email.split("@")[0];
-
-    login(userName);
-    router.push("/");
-  }, 1000);
-};
-
+    e.preventDefault();
+    
+    if (!validateForm()) return;
+    
+    setIsLoading(true);
+    
+    // Simulate loading and login
+    setTimeout(() => {
+      setIsLoading(false);
+      // For demo, extract name from email
+      const userName = formData.email.split('@')[0];
+      login(userName);
+    }, 1000);
+  };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
