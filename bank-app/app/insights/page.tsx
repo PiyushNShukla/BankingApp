@@ -1,7 +1,9 @@
 // File: app/insights/page.tsx
 
 'use client';
-
+import { useRouter } from 'next/navigation';
+import Navbar from '@/components/ui/Navbar';
+import { useAuth } from '@/context/AuthContext';
 import { useState } from 'react';
 import { 
   TrendingUp, 
@@ -19,6 +21,7 @@ import {
   ArrowUpRight,
   ArrowDownRight
 } from 'lucide-react';
+import NavbarWrapper from '@/components/wrapper/NavbarWrapper';
 
 interface Transaction {
   id: string;
@@ -75,6 +78,8 @@ export default function InsightsPage() {
   const maxTrend = Math.max(...monthlyTrend.map(m => m.amount));
 
   return (
+    <main className="bg-slate-50 min-h-screen pb-20">
+      <NavbarWrapper />
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       {/* Header */}
       <div className="bg-white shadow-sm border-b border-gray-200">
@@ -276,5 +281,6 @@ export default function InsightsPage() {
         </div>
       </div>
     </div>
+    </main>
   );
 }
