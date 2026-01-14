@@ -1,6 +1,9 @@
 'use client';
 
 import FeatureCard from '../ui/FeatureCard';
+import { useRouter } from 'next/navigation';
+
+
 import {
   BarChart3,
   Send,
@@ -9,6 +12,7 @@ import {
 } from 'lucide-react';
 
 export default function FeatureGrid() {
+  const router = useRouter();
   return (
     <section className="mt-10">
       <div
@@ -31,7 +35,7 @@ export default function FeatureGrid() {
           title="Move Money"
           description="Instant transfers to saved or new payees."
           icon={<Send className="h-6 w-6 text-green-600" />}
-          onClick={() => alert('Initiating Transfer')}
+          onClick={() => router.push('/transaction')}
         />
 
         <FeatureCard
