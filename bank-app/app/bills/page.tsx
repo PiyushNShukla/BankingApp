@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Navbar from '@/components/ui/Navbar';
 import { useAuth } from '@/context/AuthContext';
+import NavbarWrapper from '@/components/wrapper/NavbarWrapper';
 import { 
   Search, 
   Smartphone, 
@@ -51,7 +52,7 @@ export default function BillPaymentsPage() {
 
   return (
     <main className="bg-slate-50 min-h-screen pb-20">
-      <Navbar userName={userName!} onLogout={() => router.push('/')} />
+       <NavbarWrapper />
 
       <div className="max-w-4xl mx-auto px-6 py-10">
         {/* TOP SECTION: Search & Recent */}
