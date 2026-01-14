@@ -58,6 +58,15 @@ export default function SignIn() {
       setIsLoading(false);
       // For demo, extract name from email
       const userName = formData.email.split('@')[0];
+      const bankUser = {
+    name,
+    Mail,
+    mobile: '',
+    address: '',
+    is2FAEnabled: false
+  };
+
+  localStorage.setItem('bankUser', JSON.stringify(bankUser));
       login(userName);
     }, 1000);
   };

@@ -11,7 +11,7 @@ export default function NavbarWrapper() {
   const pathname = usePathname();
 
   // Hide navbar on auth pages (signin/signup)
-  const isAuthPage = pathname?.startsWith('/auth');
+  const isAuthPage = pathname?.startsWith('/sign');
   
   if (isAuthPage || !isAuthenticated) {
     return null;
