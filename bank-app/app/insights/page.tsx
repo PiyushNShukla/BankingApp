@@ -93,11 +93,57 @@ const generateDummyData = (): TimeRangeData => {
       totalSpent: 28450.00,
       totalIncome: 45000.00,
       transactions: [
-        { id: '1', category: 'Shopping', amount: 2499, date: '2026-01-13', merchant: 'Amazon', type: 'debit' },
-        { id: '2', category: 'Income', amount: 45000, date: '2026-01-10', merchant: 'Salary Deposit', type: 'credit' },
-        { id: '3', category: 'Food', amount: 850, date: '2026-01-12', merchant: 'Swiggy', type: 'debit' },
-        { id: '4', category: 'Bills', amount: 1200, date: '2026-01-11', merchant: 'Electricity Bill', type: 'debit' },
-        { id: '5', category: 'Shopping', amount: 3200, date: '2026-01-09', merchant: 'Flipkart', type: 'debit' },
+        // January 2025
+        { id: '1', category: 'Shopping', amount: 2499, date: '2025-01-13', merchant: 'Amazon', type: 'debit' },
+        { id: '2', category: 'Income', amount: 45000, date: '2025-01-10', merchant: 'Salary Deposit', type: 'credit' },
+        { id: '3', category: 'Food', amount: 850, date: '2025-01-12', merchant: 'Swiggy', type: 'debit' },
+        { id: '4', category: 'Bills', amount: 1200, date: '2025-01-11', merchant: 'Electricity Bill', type: 'debit' },
+        { id: '5', category: 'Shopping', amount: 3200, date: '2025-01-09', merchant: 'Flipkart', type: 'debit' },
+        // February 2025
+        { id: '6', category: 'Shopping', amount: 1800, date: '2025-02-14', merchant: 'Amazon', type: 'debit' },
+        { id: '7', category: 'Income', amount: 45000, date: '2025-02-10', merchant: 'Salary Deposit', type: 'credit' },
+        { id: '8', category: 'Food', amount: 920, date: '2025-02-15', merchant: 'Zomato', type: 'debit' },
+        { id: '9', category: 'Bills', amount: 1200, date: '2025-02-08', merchant: 'Water Bill', type: 'debit' },
+        { id: '10', category: 'Transportation', amount: 2500, date: '2025-02-20', merchant: 'Uber', type: 'debit' },
+        // March 2025
+        { id: '11', category: 'Shopping', amount: 3100, date: '2025-03-12', merchant: 'Flipkart', type: 'debit' },
+        { id: '12', category: 'Income', amount: 45000, date: '2025-03-10', merchant: 'Salary Deposit', type: 'credit' },
+        { id: '13', category: 'Food', amount: 750, date: '2025-03-18', merchant: 'Dominos', type: 'debit' },
+        { id: '14', category: 'Entertainment', amount: 1200, date: '2025-03-22', merchant: 'Movie Ticket', type: 'debit' },
+        // April 2025
+        { id: '15', category: 'Shopping', amount: 2200, date: '2025-04-05', merchant: 'Myntra', type: 'debit' },
+        { id: '16', category: 'Income', amount: 45000, date: '2025-04-10', merchant: 'Salary Deposit', type: 'credit' },
+        { id: '17', category: 'Bills', amount: 1500, date: '2025-04-15', merchant: 'Internet Bill', type: 'debit' },
+        // May 2025
+        { id: '18', category: 'Food', amount: 1800, date: '2025-05-20', merchant: 'Swiggy', type: 'debit' },
+        { id: '19', category: 'Income', amount: 45000, date: '2025-05-10', merchant: 'Salary Deposit', type: 'credit' },
+        { id: '20', category: 'Shopping', amount: 2800, date: '2025-05-25', merchant: 'Amazon', type: 'debit' },
+        // June 2025
+        { id: '21', category: 'Transportation', amount: 3000, date: '2025-06-15', merchant: 'Cab Service', type: 'debit' },
+        { id: '22', category: 'Income', amount: 45000, date: '2025-06-10', merchant: 'Salary Deposit', type: 'credit' },
+        { id: '23', category: 'Food', amount: 1200, date: '2025-06-18', merchant: 'Zomato', type: 'debit' },
+        // July 2025
+        { id: '24', category: 'Shopping', amount: 2100, date: '2025-07-08', merchant: 'Flipkart', type: 'debit' },
+        { id: '25', category: 'Income', amount: 45000, date: '2025-07-10', merchant: 'Salary Deposit', type: 'credit' },
+        { id: '26', category: 'Bills', amount: 1800, date: '2025-07-12', merchant: 'Electricity Bill', type: 'debit' },
+        // August 2025
+        { id: '27', category: 'Food', amount: 950, date: '2025-08-22', merchant: 'Swiggy', type: 'debit' },
+        { id: '28', category: 'Income', amount: 45000, date: '2025-08-10', merchant: 'Salary Deposit', type: 'credit' },
+        { id: '29', category: 'Entertainment', amount: 1500, date: '2025-08-25', merchant: 'Concert Ticket', type: 'debit' },
+        // September 2025
+        { id: '30', category: 'Shopping', amount: 2600, date: '2025-09-14', merchant: 'Amazon', type: 'debit' },
+        { id: '31', category: 'Income', amount: 45000, date: '2025-09-10', merchant: 'Salary Deposit', type: 'credit' },
+        // October 2025
+        { id: '32', category: 'Bills', amount: 1400, date: '2025-10-05', merchant: 'Water Bill', type: 'debit' },
+        { id: '33', category: 'Income', amount: 45000, date: '2025-10-10', merchant: 'Salary Deposit', type: 'credit' },
+        { id: '34', category: 'Food', amount: 1100, date: '2025-10-20', merchant: 'Dominos', type: 'debit' },
+        // November 2025
+        { id: '35', category: 'Shopping', amount: 3500, date: '2025-11-15', merchant: 'Black Friday Sale', type: 'debit' },
+        { id: '36', category: 'Income', amount: 45000, date: '2025-11-10', merchant: 'Salary Deposit', type: 'credit' },
+        // December 2025
+        { id: '37', category: 'Food', amount: 15600, date: '2025-12-28', merchant: 'Holiday Parties', type: 'debit' },
+        { id: '38', category: 'Bills', amount: 68000, date: '2025-12-01', merchant: 'Annual Bills', type: 'debit' },
+        { id: '39', category: 'Income', amount: 45000, date: '2025-12-10', merchant: 'Salary Deposit', type: 'credit' },
       ],
       categorySpending: [
         { category: 'Shopping', amount: 8500, percentage: 29.9, icon: ShoppingCart, color: 'bg-purple-500' },
@@ -118,11 +164,67 @@ const generateDummyData = (): TimeRangeData => {
       totalSpent: 325640.00,
       totalIncome: 520000.00,
       transactions: [
-        { id: '1', category: 'Shopping', amount: 2499, date: '2026-01-13', merchant: 'Amazon', type: 'debit' },
-        { id: '2', category: 'Income', amount: 45000, date: '2026-01-10', merchant: 'Salary Deposit', type: 'credit' },
-        { id: '3', category: 'Food', amount: 15600, date: '2025-12-28', merchant: 'Various Restaurants', type: 'debit' },
-        { id: '4', category: 'Bills', amount: 68000, date: '2025-12-01', merchant: 'Annual Bills', type: 'debit' },
-        { id: '5', category: 'Travel', amount: 45000, date: '2025-11-15', merchant: 'Flight Booking', type: 'debit' },
+        // 2025 Transactions - Complete Year
+        // January 2025
+        { id: '100', category: 'Shopping', amount: 2800, date: '2025-01-14', merchant: 'Flipkart', type: 'debit' },
+        { id: '101', category: 'Income', amount: 45000, date: '2025-01-10', merchant: 'Salary Deposit', type: 'credit' },
+        { id: '102', category: 'Food', amount: 1200, date: '2025-01-15', merchant: 'Swiggy', type: 'debit' },
+        
+        // February 2025
+        { id: '103', category: 'Bills', amount: 1600, date: '2025-02-08', merchant: 'Internet Bill', type: 'debit' },
+        { id: '104', category: 'Income', amount: 45000, date: '2025-02-10', merchant: 'Salary Deposit', type: 'credit' },
+        { id: '105', category: 'Shopping', amount: 2200, date: '2025-02-20', merchant: 'Amazon', type: 'debit' },
+        
+        // March 2025
+        { id: '106', category: 'Food', amount: 1200, date: '2025-03-20', merchant: 'Zomato', type: 'debit' },
+        { id: '107', category: 'Income', amount: 45000, date: '2025-03-10', merchant: 'Salary Deposit', type: 'credit' },
+        { id: '108', category: 'Transportation', amount: 1800, date: '2025-03-25', merchant: 'Uber', type: 'debit' },
+        
+        // April 2025
+        { id: '109', category: 'Shopping', amount: 3200, date: '2025-04-15', merchant: 'Myntra', type: 'debit' },
+        { id: '110', category: 'Income', amount: 45000, date: '2025-04-10', merchant: 'Salary Deposit', type: 'credit' },
+        { id: '111', category: 'Bills', amount: 1500, date: '2025-04-12', merchant: 'Electricity Bill', type: 'debit' },
+        
+        // May 2025
+        { id: '112', category: 'Transportation', amount: 2500, date: '2025-05-18', merchant: 'Cab Service', type: 'debit' },
+        { id: '113', category: 'Income', amount: 45000, date: '2025-05-10', merchant: 'Salary Deposit', type: 'credit' },
+        { id: '114', category: 'Food', amount: 950, date: '2025-05-22', merchant: 'Dominos', type: 'debit' },
+        
+        // June 2025
+        { id: '115', category: 'Entertainment', amount: 1800, date: '2025-06-25', merchant: 'Concert', type: 'debit' },
+        { id: '116', category: 'Income', amount: 45000, date: '2025-06-10', merchant: 'Salary Deposit', type: 'credit' },
+        { id: '117', category: 'Shopping', amount: 2100, date: '2025-06-15', merchant: 'Flipkart', type: 'debit' },
+        
+        // July 2025
+        { id: '118', category: 'Bills', amount: 2000, date: '2025-07-12', merchant: 'Electricity Bill', type: 'debit' },
+        { id: '119', category: 'Income', amount: 45000, date: '2025-07-10', merchant: 'Salary Deposit', type: 'credit' },
+        { id: '120', category: 'Food', amount: 1400, date: '2025-07-20', merchant: 'Swiggy', type: 'debit' },
+        
+        // August 2025
+        { id: '121', category: 'Food', amount: 1400, date: '2025-08-22', merchant: 'Swiggy', type: 'debit' },
+        { id: '122', category: 'Income', amount: 45000, date: '2025-08-10', merchant: 'Salary Deposit', type: 'credit' },
+        { id: '123', category: 'Entertainment', amount: 1500, date: '2025-08-28', merchant: 'Movie Theater', type: 'debit' },
+        
+        // September 2025
+        { id: '124', category: 'Shopping', amount: 2400, date: '2025-09-14', merchant: 'Amazon', type: 'debit' },
+        { id: '125', category: 'Income', amount: 45000, date: '2025-09-10', merchant: 'Salary Deposit', type: 'credit' },
+        { id: '126', category: 'Bills', amount: 1800, date: '2025-09-08', merchant: 'Internet Bill', type: 'debit' },
+        
+        // October 2025
+        { id: '127', category: 'Bills', amount: 1500, date: '2025-10-05', merchant: 'Water Bill', type: 'debit' },
+        { id: '128', category: 'Income', amount: 45000, date: '2025-10-10', merchant: 'Salary Deposit', type: 'credit' },
+        { id: '129', category: 'Food', amount: 1100, date: '2025-10-20', merchant: 'Zomato', type: 'debit' },
+        
+        // November 2025
+        { id: '130', category: 'Shopping', amount: 3500, date: '2025-11-15', merchant: 'Black Friday Sale', type: 'debit' },
+        { id: '131', category: 'Income', amount: 45000, date: '2025-11-10', merchant: 'Salary Deposit', type: 'credit' },
+        { id: '132', category: 'Transportation', amount: 2200, date: '2025-11-18', merchant: 'Uber', type: 'debit' },
+        
+        // December 2025
+        { id: '133', category: 'Food', amount: 15600, date: '2025-12-28', merchant: 'Holiday Celebrations', type: 'debit' },
+        { id: '134', category: 'Bills', amount: 68000, date: '2025-12-01', merchant: 'Annual Bills', type: 'debit' },
+        { id: '135', category: 'Income', amount: 45000, date: '2025-12-10', merchant: 'Salary Deposit', type: 'credit' },
+        { id: '136', category: 'Entertainment', amount: 2500, date: '2025-12-20', merchant: 'New Year Party', type: 'debit' },
       ],
       categorySpending: [
         { category: 'Shopping', amount: 98600, percentage: 30.3, icon: ShoppingCart, color: 'bg-purple-500' },
@@ -210,48 +312,15 @@ export default function InsightsPage() {
       {/* Header */}
       <div className="bg-white shadow-sm border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 py-6">
-          <div className="flex items-center justify-between">
+          <div className="flex items-start justify-between mb-6">
             <div>
               <h1 className="text-3xl font-bold text-gray-900">Financial Insights</h1>
               <p className="text-gray-600 mt-1">Track your spending and savings patterns</p>
             </div>
-            <div className="flex gap-3">
-              <button className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition text-gray-700">
-                <Filter className="w-4 h-4" />
-                Filter
-              </button>
-              <button className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-                <Download className="w-4 h-4" />
-                Export
-              </button>
-            </div>
-          </div>
-
-          {/* Time Range Selector */}
-          <div className="flex gap-2 mt-6 mb-6">
-            {(['week', 'month', 'year'] as const).map((range) => (
-              <button
-                key={range}
-                onClick={() => {
-                  setTimeRange(range);
-                  setSelectedMonth(null);
-                  setSelectedYear(null);
-                }}
-                className={`px-4 py-2 rounded-lg font-medium transition ${
-                  timeRange === range
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-              >
-                {range.charAt(0).toUpperCase() + range.slice(1)}
-              </button>
-            ))}
-          </div>
-
-          {/* Filter by Month/Year */}
-          <div className="flex gap-4 items-center">
+            
+            {/* Filter by Month/Year - Upper Right */}
             {timeRange !== 'week' && (
-              <>
+              <div className="flex gap-4 items-end">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Filter by Month:</label>
                   <select
@@ -280,8 +349,29 @@ export default function InsightsPage() {
                     <option value="2026">2026</option>
                   </select>
                 </div>
-              </>
+              </div>
             )}
+          </div>
+
+          {/* Time Range Selector */}
+          <div className="flex gap-2">
+            {(['week', 'month', 'year'] as const).map((range) => (
+              <button
+                key={range}
+                onClick={() => {
+                  setTimeRange(range);
+                  setSelectedMonth(null);
+                  setSelectedYear(null);
+                }}
+                className={`px-4 py-2 rounded-lg font-medium transition ${
+                  timeRange === range
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
+              >
+                {range.charAt(0).toUpperCase() + range.slice(1)}
+              </button>
+            ))}
           </div>
         </div>
       </div>
@@ -348,7 +438,7 @@ export default function InsightsPage() {
               <div className="space-y-4">
                 {monthlyTrend.map((item, index) => (
                   <div key={index} className="flex items-center gap-4">
-                    <span className="text-sm font-medium text-gray-600 w-12">{item.month}</span>
+                    <span className="text-sm font-medium text-gray-600 w-12">{item.label}</span>
                     <div className="flex-1 bg-gray-100 rounded-full h-8 relative overflow-hidden">
                       <div
                         className="bg-gradient-to-r from-blue-500 to-indigo-600 h-full rounded-full transition-all duration-500 flex items-center justify-end pr-3"
