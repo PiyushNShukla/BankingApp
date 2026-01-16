@@ -68,6 +68,14 @@ export default function TransfersPage() {
     }
   ]);
 
+  // This creates one object to hold all the form data
+const [newBen, setNewBen] = useState({
+  name: '',
+  accountNumber: '',
+  ifsc: '',
+  bankName: ''
+});
+
   useEffect(() => {
     if (!isAuthenticated) {
       router.push('/auth/signin');
@@ -219,7 +227,7 @@ export default function TransfersPage() {
             )}
 
             {/* New Transfer Tab (Old code preserved) */}
-            {activeTab === 'new' && (
+            {/* {activeTab === 'new' && (
               <div className="space-y-6">
                 <h3 className="text-lg font-semibold text-gray-900">Transfer to New Account</h3>
                 <div className="grid grid-cols-2 gap-4">
@@ -231,15 +239,104 @@ export default function TransfersPage() {
                     <Building2 className="mx-auto mb-2 text-blue-600" size={24} />
                     <p className="font-medium text-gray-900">Other Bank</p>
                   </button>
-                </div>
+                </div> */}
                 {/* Form fields... (Truncated for brevity, remains as original) */}
-                <input type="text" placeholder="Name" value={newBeneficiary.name} onChange={(e) => setNewBeneficiary({ ...newBeneficiary, name: e.target.value })} className="w-full p-3 border rounded-lg text-black" />
+                {/* <input type="text" placeholder="Name" value={newBeneficiary.name} onChange={(e) => setNewBeneficiary({ ...newBeneficiary, name: e.target.value })} className="w-full p-3 border rounded-lg text-black" />
                 <input type="text" placeholder="Account Number" value={newBeneficiary.accountNumber} onChange={(e) => setNewBeneficiary({ ...newBeneficiary, accountNumber: e.target.value })} className="w-full p-3 border rounded-lg text-black" />
                 <input type="text" placeholder="IFSC" value={newBeneficiary.ifsc} onChange={(e) => setNewBeneficiary({ ...newBeneficiary, ifsc: e.target.value.toUpperCase() })} className="w-full p-3 border rounded-lg text-black uppercase" />
                 <input type="number" placeholder="Amount" value={amount} onChange={(e) => setAmount(e.target.value)} className="w-full p-3 border rounded-lg text-black" />
                 <button onClick={handleTransfer} className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold">Transfer Now</button>
               </div>
-            )}
+            )} */}
+
+                {/* TAB 2: NEW TRANSFER */}
+{activeTab === 'new' && (
+  <div className="space-y-6 animate-in fade-in duration-300">
+    <div className="grid grid-cols-2 gap-4">
+      <button 
+        onClick={() => setTransferType('own')} 
+        className={`p-4 rounded-lg border-2 transition ${transferType === 'own' ? 'border-blue-600 bg-blue-50' : 'border-gray-200'}`}
+      >
+        <Wallet className="mx-auto mb-2 text-blue-600" size={24} />
+        <p className="font-medium text-gray-900">Own Account</p>
+      </button>
+      <button 
+        onClick={() => setTransferType('new')} 
+        className={`p-4 rounded-lg border-2 transition ${transferType === 'new' ? 'border-blue-600 bg-blue-50' : 'border-gray-200'}`}
+      >
+        <Building2 className="mx-auto mb-2 text-blue-600" size={24} />
+        <p className="font-medium text-gray-900">Other Bank</p>
+      </button>
+    </div>
+
+    <div className="space-y-4">
+      {/* LOGIC CHANGE: 
+          If 'own', we show a dropdown. 
+          If 'new', we show text inputs for Name and IFSC.
+      */}
+      {transferType === 'own' ? (
+        <div className="space-y-4">
+          <label className="block text-sm font-medium text-gray-700">Select Target Account</label>
+          <select 
+            className="w-full p-3 border border-gray-200 rounded-lg text-black bg-white outline-none focus:ring-2 focus:ring-blue-500"
+            onChange={(e) => setNewBen({...newBen, accountNumber: e.target.value, name: 'Self'})}
+          >
+            <option value="">-- Choose Account --</option>
+            <option value="9876543210">Savings Account (****3210)</option>
+            <option value="5566778899">Current Account (****8899)</option>
+            <option value="1122334455">Fixed Deposit (****4455)</option>
+          </select>
+          <p className="text-xs text-blue-600 italic">* IFSC and Name are not required for internal transfers.</p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input 
+            type="text" 
+            placeholder="Beneficiary Name" 
+            className="w-full px-4 py-3 border border-gray-200 rounded-lg text-black outline-none" 
+            value={newBen.name}
+            onChange={(e) => setNewBen({...newBen, name: e.target.value})}
+          />
+          <input 
+            type="text" 
+            placeholder="IFSC Code" 
+            className="w-full px-4 py-3 border border-gray-200 rounded-lg text-black outline-none uppercase" 
+            value={newBen.ifsc}
+            onChange={(e) => setNewBen({...newBen, ifsc: e.target.value})}
+          />
+          <input 
+            type="text" 
+            placeholder="Account Number" 
+            className="w-full px-4 py-3 border border-gray-200 rounded-lg text-black outline-none" 
+            value={newBen.accountNumber}
+            onChange={(e) => setNewBen({...newBen, accountNumber: e.target.value})}
+          />
+        </div>
+      )}
+
+      {/* Shared Amount Field */}
+      <div className="relative">
+        <IndianRupee className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+        <input 
+          type="number" 
+          placeholder="Amount" 
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+          className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg text-black outline-none focus:ring-2 focus:ring-blue-500" 
+        />
+      </div>
+
+      <button 
+        onClick={handleTransfer}
+        className="w-full bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition"
+      >
+        Confirm & Transfer
+      </button>
+    </div>
+  </div>
+)}
+
+
 
             {/* REWRITTEN: Manage Beneficiaries Tab */}
             {activeTab === 'beneficiaries' && (
