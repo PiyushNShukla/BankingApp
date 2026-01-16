@@ -245,9 +245,10 @@ const App = () => {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-indigo-600 rounded-2xl flex items-center justify-center text-white font-black text-xl shadow-lg shadow-indigo-200">T</div>
-            <div>
+            <div><a href="/">
               <span className="text-2xl font-black tracking-tighter text-slate-800 block leading-tight">TDD Bank</span>
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Premium Digital Assets</span>
+              </a>
             </div>
           </div>
           
